@@ -32,7 +32,8 @@ const Overview: CustomPage = () => {
   const { items, index } = useMemo(() => {
     const items = getItems().filter((item) => !ring || item.ring === ring);
     const index = new Fuse(items, {
-      threshold: 0.4,
+      threshold: 0.2,
+      ignoreLocation: true,
       distance: 600,
       includeScore: true,
       keys: [
